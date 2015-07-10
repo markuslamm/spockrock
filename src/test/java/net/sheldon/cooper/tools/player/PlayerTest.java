@@ -1,7 +1,5 @@
-package net.sheldon.cooper.tools;
+package net.sheldon.cooper.tools.player;
 
-import net.sheldon.cooper.tools.player.LizardPlayer;
-import net.sheldon.cooper.tools.player.PlayerStrategy;
 import org.junit.Test;
 
 import static org.assertj.core.api.StrictAssertions.assertThat;

@@ -1,7 +1,6 @@
-package net.sheldon.cooper.tools;
+package net.sheldon.cooper.tools.player;
 
-import net.sheldon.cooper.tools.player.PlayerStrategy;
-import net.sheldon.cooper.tools.player.RandomPlayer;
+import net.sheldon.cooper.tools.domain.Item;
 import org.junit.Test;
 
 import java.util.List;

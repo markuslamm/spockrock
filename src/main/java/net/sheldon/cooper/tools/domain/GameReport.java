@@ -1,4 +1,4 @@
-package net.sheldon.cooper.tools;
+package net.sheldon.cooper.tools.domain;
 
 import java.util.List;
 
@@ -17,11 +17,7 @@ public class GameReport {
     }
 
     public String getFullResult() {
-        final StringBuilder result = new StringBuilder(getHeader()).append(NEWLINE);
-        for(final Game game : games) {
-            result.append(generateResultRecord(game)).append(NEWLINE);
-        }
-        return result.toString();
+       return "Report";
     }
 
     private String generateResultRecord(final Game game) {

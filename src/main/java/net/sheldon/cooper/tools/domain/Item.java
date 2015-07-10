@@ -1,4 +1,4 @@
-package net.sheldon.cooper.tools;
+package net.sheldon.cooper.tools.domain;
 
 import java.util.Arrays;
 

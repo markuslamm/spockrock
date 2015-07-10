@@ -1,10 +1,13 @@
-package net.sheldon.cooper.tools;
+package net.sheldon.cooper.tools.domain;
+
+import net.sheldon.cooper.tools.player.PlayerStrategy;
 
 public final class Game {
 
     private final UserChoice choice1;
     private final UserChoice choice2;
     private GameResult result;
+    private PlayerStrategy winner = null;
 
     public enum GameResult { UNDEFINED, WIN, LOSE, TIE }
 
@@ -22,19 +25,15 @@ public final class Game {
         return choice2;
     }
 
-    public GameResult getResult() {
-        return result;
-    }
-
     public void setResult(final GameResult result) {
         this.result = result;
     }
 
-    @Override
-    public String toString() {
-        return "Game {" +
-                "choice1=" + choice1 +
-                ", choice2=" + choice2 +
-                '}';
+    public PlayerStrategy getWinner() {
+        return winner;
+    }
+
+    public void setWinner(final PlayerStrategy winner) {
+        this.winner = winner;
     }
 }

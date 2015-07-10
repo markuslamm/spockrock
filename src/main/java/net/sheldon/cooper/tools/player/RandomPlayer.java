@@ -1,6 +1,6 @@
 package net.sheldon.cooper.tools.player;
 
-import net.sheldon.cooper.tools.Item;
+import net.sheldon.cooper.tools.domain.Item;
 
 import java.security.SecureRandom;
 
