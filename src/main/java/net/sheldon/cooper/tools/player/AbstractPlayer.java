@@ -10,7 +10,7 @@ public abstract class AbstractPlayer implements PlayerStrategy {
 
     private final String playerName;
 
-    public AbstractPlayer(final String playerName) {
+    AbstractPlayer(final String playerName) {
         this.playerName = playerName;
     }
 

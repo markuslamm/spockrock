@@ -21,7 +21,25 @@ public class ItemTest {
     }
 
     @Test
-    public void testTies() {
-        //TODO
+    public void testLose() {
+        assertThat(Item.LIZARD.beats(Item.ROCK)).isFalse();
+        assertThat(Item.PAPER.beats(Item.SCISSORS)).isFalse();
+        assertThat(Item.ROCK.beats(Item.PAPER)).isFalse();
+        assertThat(Item.LIZARD.beats(Item.ROCK)).isFalse();
+        assertThat(Item.SPOCK.beats(Item.LIZARD)).isFalse();
+        assertThat(Item.SCISSORS.beats(Item.SPOCK)).isFalse();
+        assertThat(Item.LIZARD.beats(Item.SCISSORS)).isFalse();
+        assertThat(Item.PAPER.beats(Item.LIZARD)).isFalse();
+        assertThat(Item.SPOCK.beats(Item.PAPER)).isFalse();
+        assertThat(Item.ROCK.beats(Item.SPOCK)).isFalse();
+    }
+
+    @Test
+    public void testTie() {
+        assertThat(Item.LIZARD.beats(Item.LIZARD)).isFalse();
+        assertThat(Item.PAPER.beats(Item.PAPER)).isFalse();
+        assertThat(Item.ROCK.beats(Item.ROCK)).isFalse();
+        assertThat(Item.SCISSORS.beats(Item.SCISSORS)).isFalse();
+        assertThat(Item.SPOCK.beats(Item.SPOCK)).isFalse();
     }
 }

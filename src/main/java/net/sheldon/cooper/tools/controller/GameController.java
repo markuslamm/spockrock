@@ -1,7 +1,6 @@
-package net.sheldon.cooper.tools;
+package net.sheldon.cooper.tools.controller;
 
 import net.sheldon.cooper.tools.domain.Game;
-import net.sheldon.cooper.tools.domain.Game.GameResult;
 import net.sheldon.cooper.tools.domain.GameReport;
 import net.sheldon.cooper.tools.domain.UserChoice;
 import net.sheldon.cooper.tools.player.PlayerStrategy;
@@ -14,8 +13,8 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public class GameController {
 
-    private PlayerStrategy player1;
-    private PlayerStrategy player2;
+    private final PlayerStrategy player1;
+    private final PlayerStrategy player2;
 
     public GameController(final PlayerStrategy player1, final PlayerStrategy player2) {
         this.player1 = player1;
@@ -39,16 +38,16 @@ public class GameController {
         final List<Game> games = newArrayList();
         for(int i = 0; i < iterations; i++) {
             final Game game = new Game(randomChoices.next(), lizardChoices.next());
-            game.setResult(evaluateGame(game));
+            game.setWinner(evaluateGame(game));
             games.add(game);
         }
         return games;
     }
 
-    GameResult evaluateGame(final Game game) {
-        return game.getChoice1().getSelectedItem() == game.getChoice2().getSelectedItem() ? GameResult.TIE :
-                game.getChoice1().getSelectedItem().beats(game.getChoice2().getSelectedItem()) ? GameResult.WIN :
-                        GameResult.LOSE ;
+    PlayerStrategy evaluateGame(final Game game) {
+        return game.getChoice1().getSelectedItem() == game.getChoice2().getSelectedItem() ? null :
+                game.getChoice1().getSelectedItem().beats(game.getChoice2().getSelectedItem()) ? game.getChoice1().getPlayer() :
+                        game.getChoice2().getPlayer();
     }
 
 
