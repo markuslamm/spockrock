@@ -45,6 +45,6 @@ public class GameReport {
     }
 
     private String getHeader() {
-        return TEMPLATE + " Game results " + TEMPLATE;
+        return format("%s Game results (%d rounds) %s", TEMPLATE, games.size(), TEMPLATE);
     }
 }

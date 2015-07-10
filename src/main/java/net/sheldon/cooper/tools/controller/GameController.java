@@ -44,6 +44,7 @@ public class GameController {
         return games;
     }
 
+    //package wide visibility because of testing of core functionality
     PlayerStrategy evaluateGame(final Game game) {
         return game.getChoice1().getSelectedItem() == game.getChoice2().getSelectedItem() ? null :
                 game.getChoice1().getSelectedItem().beats(game.getChoice2().getSelectedItem()) ? game.getChoice1().getPlayer() :
